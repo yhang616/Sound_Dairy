@@ -1,0 +1,21 @@
+.category-scroll { margin: 38rpx -32rpx 20rpx; width: calc(100% + 64rpx); white-space: nowrap; }
+.category-row { display: inline-flex; gap: 14rpx; padding: 0 32rpx 10rpx; }
+.category { flex: none; padding: 15rpx 28rpx; background: white; border-radius: 999rpx; color: #718278; font-size: 25rpx; }
+.category.selected { background: #255D4A; color: white; }
+.filters { display: flex; align-items: center; gap: 12rpx; margin-bottom: 25rpx; }
+.filter { background: #E8EEE8; padding: 14rpx 22rpx; border-radius: 14rpx; color: #5F7868; font-size: 24rpx; }
+.filter.chosen { background: #D7E5D9; color: #245A45; }
+.clear { color: #8F9E93; font-size: 23rpx; }
+.favorite-filter { margin-left: auto; }
+.record { margin-bottom: 18rpx; }
+.record-head { display: flex; align-items: center; }
+.record-mark { width: 75rpx; height: 75rpx; line-height: 75rpx; text-align: center; border-radius: 22rpx; background: #E8F0E9; color: #3C765D; font-size: 38rpx; }
+.record-info { flex: 1; min-width: 0; margin-left: 20rpx; }
+.record-title { font-size: 30rpx; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.heart { color: #D77967; font-size: 23rpx; }
+.record-meta { color: #91A096; font-size: 23rpx; margin-top: 8rpx; }
+.arrow { color: #A9B5AA; font-size: 40rpx; }
+.record-description { color: #74867B; font-size: 25rpx; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin: 22rpx 0 18rpx; line-height: 1.5; }
+.record-tags { display: flex; gap: 12rpx; margin-top: 18rpx; }
+.mood { background: #F9EFE7; color: #A57959; }
+.empty-btn { width: 280rpx; margin-top: 30rpx; }

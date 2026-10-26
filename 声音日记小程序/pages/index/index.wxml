@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="eyebrow">SOUND DIARY</view>
+  <view class="title">把日子，留在声音里。</view>
+  <view class="subtitle">一句话、一场雨、一段路途，都是值得收藏的此刻。</view>
+
+  <view class="hero card">
+    <view class="hero-top"><text class="hero-symbol">♫</text><text>今天有什么想记录？</text></view>
+    <view class="hero-line">按下录音，让回忆有声音。</view>
+    <button class="primary-btn hero-btn" bindtap="openRecord">＋ 开始录音</button>
+  </view>
+
+  <view class="summary">
+    <view class="card stat"><view class="stat-number">{{count}}</view><view class="muted">声音日记</view></view>
+    <view class="card stat"><view class="stat-number">{{totalText}}</view><view class="muted">累计时长</view></view>
+  </view>
+
+  <view class="section-row"><view class="section-title">最近的声音</view><view class="more" data-path="pages/history/history" bindtap="navigate">查看全部 ›</view></view>
+  <view wx:if="{{latest.length}}">
+    <view class="entry card" wx:for="{{latest}}" wx:key="id" data-id="{{item.id}}" bindtap="openDetail">
+      <view class="entry-top"><text class="entry-icon">◉</text><view class="entry-main"><view class="entry-title">{{item.title}}</view><view class="entry-meta">{{item.dateText}} · {{item.durationText}}</view></view><text class="entry-arrow">›</text></view>
+      <view class="entry-tags"><text class="pill">{{item.category}}</text><text class="pill mood">{{item.mood}}</text></view>
+    </view>
+  </view>
+  <view wx:else class="card empty"><text class="empty-icon">♫</text>还没有日记。录下第一段声音吧。</view>
+</view>
+<view class="bottom-nav">
+  <view class="nav-item active" data-path="pages/index/index" bindtap="navigate"><text class="nav-icon">⌂</text>首页</view>
+  <view class="nav-item" data-path="pages/record/record" bindtap="navigate"><text class="nav-icon">◉</text>录音</view>
+  <view class="nav-item" data-path="pages/history/history" bindtap="navigate"><text class="nav-icon">▤</text>日记</view>
+  <view class="nav-item" data-path="pages/stats/stats" bindtap="navigate"><text class="nav-icon">▥</text>统计</view>
+</view>

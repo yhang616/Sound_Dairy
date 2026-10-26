@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="eyebrow">YOUR SOUND STORY</view>
+  <view class="title">记录统计</view>
+  <view class="subtitle">看看你的声音故事，慢慢积累成了什么模样。</view>
+
+  <view class="summary">
+    <view class="card metric"><view class="metric-value">{{count}}</view><view class="metric-label">日记总数</view></view>
+    <view class="card metric"><view class="metric-value">{{totalText}}</view><view class="metric-label">累计时长</view></view>
+    <view class="card metric"><view class="metric-value">{{favoriteCount}}</view><view class="metric-label">已收藏</view></view>
+  </view>
+
+  <view class="section-title">声音分类</view>
+  <view class="card chart-card"><canvas canvas-id="donut" class="donut"></canvas><view class="legend" wx:if="{{categories.length}}"><view class="legend-row" wx:for="{{categories}}" wx:key="name"><view class="legend-dot" style="background: {{item.color}}"></view><text class="legend-name">{{item.name}}</text><text class="legend-count">{{item.count}} 段 · {{item.percent}}%</text></view></view><view wx:else class="empty-note">录下声音后，这里会出现分类分布。</view></view>
+
+  <view class="section-title">近七天记录</view>
+  <view class="card chart-card"><canvas canvas-id="daily" class="daily"></canvas><view class="chart-footnote">按日记选择的日期统计</view></view>
+</view>
+<view class="bottom-nav">
+  <view class="nav-item" data-path="pages/index/index" bindtap="navigate"><text class="nav-icon">⌂</text>首页</view>
+  <view class="nav-item" data-path="pages/record/record" bindtap="navigate"><text class="nav-icon">◉</text>录音</view>
+  <view class="nav-item" data-path="pages/history/history" bindtap="navigate"><text class="nav-icon">▤</text>日记</view>
+  <view class="nav-item active" data-path="pages/stats/stats" bindtap="navigate"><text class="nav-icon">▥</text>统计</view>
+</view>

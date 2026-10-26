@@ -1,0 +1,14 @@
+.summary { display: flex; gap: 12rpx; margin-top: 40rpx; }
+.metric { flex: 1; min-width: 0; text-align: center; padding: 24rpx 8rpx; }
+.metric-value { color: #255D4A; font-size: 33rpx; font-weight: 700; white-space: nowrap; }
+.metric-label { color: #91A095; font-size: 22rpx; margin-top: 9rpx; }
+.chart-card { text-align: center; padding: 25rpx 20rpx; }
+.donut { width: 464rpx; height: 464rpx; margin: 0 auto; }
+.legend { border-top: 1rpx solid #EEF1EC; padding-top: 15rpx; }
+.legend-row { display: flex; align-items: center; padding: 13rpx 10rpx; font-size: 25rpx; }
+.legend-dot { width: 20rpx; height: 20rpx; border-radius: 50%; margin-right: 15rpx; }
+.legend-name { flex: 1; text-align: left; }
+.legend-count { color: #87988B; }
+.empty-note { color: #A0ACA2; font-size: 24rpx; padding: 14rpx 0; }
+.daily { width: 660rpx; height: 370rpx; margin: 0 auto; }
+.chart-footnote { color: #A0ACA2; font-size: 22rpx; margin-top: 8rpx; }

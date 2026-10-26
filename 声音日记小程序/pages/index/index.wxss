@@ -1,0 +1,19 @@
+.hero { margin-top: 44rpx; background: #DDE9DF; padding: 38rpx; box-shadow: none; }
+.hero-top { color: #255D4A; font-size: 26rpx; font-weight: 700; }
+.hero-symbol { font-size: 40rpx; margin-right: 16rpx; }
+.hero-line { font-size: 36rpx; font-weight: 700; margin: 24rpx 0 30rpx; }
+.hero-btn { margin: 0; }
+.summary { display: flex; gap: 20rpx; margin-top: 22rpx; }
+.stat { flex: 1; padding: 28rpx; }
+.stat-number { font-size: 42rpx; color: #255D4A; font-weight: 700; margin-bottom: 4rpx; }
+.section-row { display: flex; align-items: center; justify-content: space-between; }
+.more { color: #648573; font-size: 25rpx; }
+.entry { margin-bottom: 18rpx; }
+.entry-top { display: flex; align-items: center; }
+.entry-icon { width: 70rpx; height: 70rpx; line-height: 70rpx; border-radius: 22rpx; background: #EDF3EE; color: #39765C; text-align: center; font-size: 38rpx; }
+.entry-main { flex: 1; margin-left: 20rpx; }
+.entry-title { font-weight: 700; font-size: 30rpx; }
+.entry-meta { color: #93A097; font-size: 23rpx; margin-top: 7rpx; }
+.entry-arrow { font-size: 42rpx; color: #9CAC9F; }
+.entry-tags { margin: 18rpx 0 0 90rpx; display: flex; gap: 12rpx; }
+.mood { background: #F8EEE5; color: #9B7253; }

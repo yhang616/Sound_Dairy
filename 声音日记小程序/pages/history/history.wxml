@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="eyebrow">YOUR MEMORIES</view>
+  <view class="title">声音日记</view>
+  <view class="subtitle">已保存 {{count}} 段属于你的声音。</view>
+
+  <scroll-view class="category-scroll" scroll-x="true" show-scrollbar="false">
+    <view class="category-row"><view wx:for="{{categories}}" wx:key="*this" class="category {{selectedCategory === item ? 'selected' : ''}}" data-category="{{item}}" bindtap="selectCategory">{{item}}</view></view>
+  </scroll-view>
+  <view class="filters">
+    <picker mode="date" bindchange="selectDate"><view class="filter {{selectedDate ? 'chosen' : ''}}">{{selectedDate || '选择日期'}} ⌄</view></picker>
+    <view wx:if="{{selectedDate}}" class="clear" bindtap="clearDate">清除</view>
+    <view class="filter favorite-filter {{favoritesOnly ? 'chosen' : ''}}" bindtap="toggleFavorites">{{favoritesOnly ? '♥' : '♡'}} 只看收藏</view>
+  </view>
+
+  <view wx:if="{{visible.length}}" class="list">
+    <view class="record card" wx:for="{{visible}}" wx:key="id" data-id="{{item.id}}" bindtap="openDetail">
+      <view class="record-head"><view class="record-mark">♫</view><view class="record-info"><view class="record-title">{{item.title}} <text wx:if="{{item.favorite}}" class="heart">♥</text></view><view class="record-meta">{{item.dateText}} · {{item.durationText}}</view></view><view class="arrow">›</view></view>
+      <view wx:if="{{item.description}}" class="record-description">{{item.description}}</view>
+      <view class="record-tags"><text class="pill">{{item.category}}</text><text class="pill mood">{{item.mood}}</text></view>
+    </view>
+  </view>
+  <view wx:else class="card empty"><text class="empty-icon">♫</text>{{count ? '没有符合筛选条件的日记。' : '还没有声音日记。'}}<button wx:if="{{!count}}" class="secondary-btn empty-btn" bindtap="openRecord">录下第一段</button></view>
+</view>
+<view class="bottom-nav">
+  <view class="nav-item" data-path="pages/index/index" bindtap="navigate"><text class="nav-icon">⌂</text>首页</view>
+  <view class="nav-item" data-path="pages/record/record" bindtap="navigate"><text class="nav-icon">◉</text>录音</view>
+  <view class="nav-item active" data-path="pages/history/history" bindtap="navigate"><text class="nav-icon">▤</text>日记</view>
+  <view class="nav-item" data-path="pages/stats/stats" bindtap="navigate"><text class="nav-icon">▥</text>统计</view>
+</view>

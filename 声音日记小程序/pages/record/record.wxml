@@ -1,0 +1,42 @@
+<view class="page">
+  <view class="eyebrow">NEW MEMORY</view>
+  <view class="title">录下此刻</view>
+  <view class="subtitle">声音会把当时的空气也留下来。</view>
+
+  <view class="recorder card">
+    <view class="wave-wrap"><canvas canvas-id="wave" class="wave"></canvas></view>
+    <view class="timer">{{durationText}}</view>
+    <view class="record-state"><view class="status-dot {{state === 'recording' ? 'live' : ''}}"></view>{{stateText}}</view>
+    <view wx:if="{{state === 'idle' || state === 'ready'}}" class="record-actions"><button class="primary-btn" bindtap="requestStart">{{state === 'ready' ? '重新录音' : '开始录音'}}</button></view>
+    <view wx:elif="{{state === 'recording' || state === 'paused'}}" class="record-actions split"><button class="secondary-btn" bindtap="pauseOrResume">{{state === 'paused' ? '继续' : '暂停'}}</button><button class="primary-btn" bindtap="stopRecording">完成录音</button></view>
+    <view wx:else class="muted waiting">请稍候…</view>
+    <view class="hint">最长录制 10 分钟。离开页面前请先保存。</view>
+  </view>
+
+  <view wx:if="{{canSave}}" class="editor">
+    <view class="section-title">试听与编辑</view>
+    <view class="card preview">
+      <view class="preview-row"><view class="play-icon" bindtap="togglePreview">{{previewPlaying ? 'Ⅱ' : '▶'}}</view><view class="preview-label">试听录音<view class="preview-time">{{previewCurrentText}} / {{previewDurationText}}</view></view><view class="replay" bindtap="replayPreview">重播</view></view>
+      <slider value="{{previewPosition}}" min="0" max="100" activeColor="#255D4A" backgroundColor="#E5EBE5" block-size="14" bindchange="seekPreview" />
+    </view>
+    <view class="card form">
+      <view class="field-label">标题 <text class="required">*</text></view>
+      <input class="field-input" maxlength="40" placeholder="给这段声音取个名字" value="{{title}}" bindinput="onTitle" />
+      <view class="field-label">文字描述</view>
+      <textarea class="field-textarea" maxlength="500" placeholder="写下这段声音背后的故事…" value="{{description}}" bindinput="onDescription" />
+      <view class="field-label">记录日期</view>
+      <picker mode="date" value="{{date}}" bindchange="onDate"><view class="field-select">{{date}} <text>⌄</text></view></picker>
+      <view class="field-label">分类</view>
+      <picker range="{{categories}}" value="{{categoryIndex}}" bindchange="onCategory"><view class="field-select">{{categories[categoryIndex]}} <text>⌄</text></view></picker>
+      <view class="field-label">心情</view>
+      <picker range="{{moods}}" value="{{moodIndex}}" bindchange="onMood"><view class="field-select">{{moods[moodIndex]}} <text>⌄</text></view></picker>
+    </view>
+    <button class="primary-btn save-btn" loading="{{saving}}" disabled="{{saving}}" bindtap="save">保存声音日记</button>
+  </view>
+</view>
+<view class="bottom-nav">
+  <view class="nav-item" data-path="pages/index/index" bindtap="navigate"><text class="nav-icon">⌂</text>首页</view>
+  <view class="nav-item active" data-path="pages/record/record" bindtap="navigate"><text class="nav-icon">◉</text>录音</view>
+  <view class="nav-item" data-path="pages/history/history" bindtap="navigate"><text class="nav-icon">▤</text>日记</view>
+  <view class="nav-item" data-path="pages/stats/stats" bindtap="navigate"><text class="nav-icon">▥</text>统计</view>
+</view>

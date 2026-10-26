@@ -1,0 +1,19 @@
+<view wx:if="{{record}}" class="page">
+  <view class="eyebrow">SAVED MOMENT</view>
+  <view class="title detail-title">{{record.title}}</view>
+  <view class="subtitle">{{dateText}} · {{durationText}}</view>
+  <view class="tags"><text class="pill">{{record.category}}</text><text class="pill mood">{{record.mood}}</text></view>
+
+  <view class="card player">
+    <view class="sound-art"><view class="art-circle">♫</view></view>
+    <view class="player-state">{{audioMissing ? '录音文件不可用' : playing ? '正在播放' : '声音日记'}}</view>
+    <view class="time-row"><text>{{currentText}}</text><text>{{durationText}}</text></view>
+    <slider value="{{progress}}" min="0" max="100" activeColor="#255D4A" backgroundColor="#E3EBE4" block-size="16" bindchange="seek" disabled="{{audioMissing}}" />
+    <view class="player-actions"><view bindtap="replay">↺ 重播</view><view class="big-play" bindtap="togglePlay">{{playing ? 'Ⅱ' : '▶'}}</view><view bindtap="toggleFavorite">{{record.favorite ? '♥ 已收藏' : '♡ 收藏'}}</view></view>
+  </view>
+
+  <view class="section-title">关于这段声音</view>
+  <view class="card description">{{record.description || '没有填写文字描述。'}}</view>
+  <view class="meta-line">分类：{{record.category}}　 心情：{{record.mood}}</view>
+  <button class="delete" bindtap="deleteRecord">删除这篇日记</button>
+</view>

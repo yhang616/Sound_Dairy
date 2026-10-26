@@ -1,0 +1,14 @@
+.detail-title { word-break: break-all; }
+.tags { display: flex; gap: 12rpx; margin-top: 24rpx; }
+.mood { background: #F9EFE7; color: #A57959; }
+.player { margin-top: 40rpx; padding: 34rpx 30rpx 30rpx; }
+.sound-art { height: 260rpx; display: flex; justify-content: center; align-items: center; border-radius: 22rpx; background: #E5EFE7; }
+.art-circle { width: 140rpx; height: 140rpx; line-height: 140rpx; text-align: center; border-radius: 50%; background: #D2E3D5; color: #44785D; font-size: 75rpx; }
+.player-state { text-align: center; font-weight: 700; margin: 25rpx 0; }
+.time-row { display: flex; justify-content: space-between; color: #8D9D92; font-size: 22rpx; }
+.player-actions { display: flex; align-items: center; justify-content: space-around; color: #477960; font-size: 25rpx; margin: 20rpx 0 5rpx; }
+.big-play { width: 94rpx; height: 94rpx; line-height: 94rpx; text-align: center; background: #255D4A; color: white; border-radius: 50%; font-size: 36rpx; }
+.description { color: #536B5B; line-height: 1.75; white-space: pre-wrap; }
+.meta-line { color: #93A195; font-size: 23rpx; margin-top: 22rpx; }
+.delete { margin-top: 70rpx; background: transparent; color: #C97468; font-size: 25rpx; }
+.delete::after { border: 0; }
